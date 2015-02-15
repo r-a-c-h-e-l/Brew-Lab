@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  beer_name: MyText
+  beer_type: MyText
+  user_id: 1
+  phase1: 
+  phase3: MyText
+  phase4: MyText
+  phase5: MyText
+  phase6: MyText
+  current_phase: MyText
+
+two:
+  beer_name: MyText
+  beer_type: MyText
+  user_id: 1
+  phase1: 
+  phase3: MyText
+  phase4: MyText
+  phase5: MyText
+  phase6: MyText
+  current_phase: MyText
