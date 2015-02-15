@@ -1,16 +1,27 @@
 class UserController < ApplicationController
 
+
   def create
-    @user = User.create(users_params)
+    binding.pry
+    @user = User.create(user_params)
     if @user.save
-      redirect_to session_path(@user) method: :post
+      render :new
     else
       render :index
-    end  
+    end
+  end
+
+  def show
+    @user = User.find(session[:user_id])
+    if @user
+      render :show
+    else
+      redirect_to login_path
+    end
   end
 
   private
-    def users_params
-      params.require(:users).permit(:firstName, :lastName, :username, :email, :password)
+    def user_params
+      params.permit(:firstName, :lastName, :username, :email, :password)
     end
 end

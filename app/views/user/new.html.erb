@@ -7,6 +7,7 @@
       </header>
     </div>
   </section>
+
   <section class= "row">
     <!-- left side of the screen that shows logo -->
     <div class="col-md-6">
@@ -16,23 +17,7 @@
    users to sign up or login -->
    <div class="col-md-6">
      <p id= "welcome">A temperature monitoring assistant to your homebrewing</p>
-     <button id="signUpButton" onclick="hide()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
-       Sign up!
-     </button>
-     <div class="collapse" id="collapseSignUp">
-      <form class="signUp" action="/user" method="post">
-        <div class="form-group">
-         <label class= "sr-only" for="firstName">First Name</label>
-         <input type="text" name="firstName" id="firstName" placeholder= "first name">
-        </div>
-        <div class="form-group">
-         <label class= "sr-only" for="lastName">Last Name</label>
-         <input type="text" name="lastName" id="lastName" placeholder= "last name">
-        </div>
-        <div class="form-group">
-         <label class= "sr-only" for="email">email</label>
-         <input type="email" name="email" id="email" placeholder= "email">
-        </div>
+      <form class="signUp" action="/session" method="post">
         <div class="form-group">
          <label class= "sr-only" for="username">username</label>
          <input type="text" name="username" id="username" placeholder= " username">
@@ -42,10 +27,8 @@
          <input type="password" name="password" id="password" placeholder= "password">
         </div>
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
-        <button id="createUserButton" type="submit" class="btn-btn-primary">Sign Up! </button>
+        <button id="loginUserButton" type="submit" class="btn-btn-primary">Sign In! </button>
       </form>
-     </div>
-     <p id="loginP">or <a id="loginLink" href="/login">sign in</a></p>
    </div>
  </section>
 </div>

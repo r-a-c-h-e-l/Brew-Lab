@@ -7,6 +7,7 @@
       </header>
     </div>
   </section>
+
   <section class= "row">
     <!-- left side of the screen that shows logo -->
     <div class="col-md-6">
@@ -16,36 +17,44 @@
    users to sign up or login -->
    <div class="col-md-6">
      <p id= "welcome">A temperature monitoring assistant to your homebrewing</p>
-     <button id="signUpButton" onclick="hide()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
-       Sign up!
-     </button>
-     <div class="collapse" id="collapseSignUp">
-      <form class="signUp" action="/user" method="post">
-        <div class="form-group">
+      <form class="signUp" action="/users" method="post">
+        <div class="form-group has-error has-feedback">
          <label class= "sr-only" for="firstName">First Name</label>
-         <input type="text" name="firstName" id="firstName" placeholder= "first name">
+         <input type="text" class="form-control" name="firstName" id="firstName" placeholder= "first name">
+         <% if @user.errors.full_messages_for(:firstName).length > 0 %>
+          <p class= "errors"><%=@user.errors.full_messages_for(:firstName)[0]%>
+         <% end %>
         </div>
         <div class="form-group">
          <label class= "sr-only" for="lastName">Last Name</label>
          <input type="text" name="lastName" id="lastName" placeholder= "last name">
+         <% if @user.errors.full_messages_for(:lastName).length > 0 %>
+          <p class= "errors"><%=@user.errors.full_messages_for(:lastName)[0]%>
+         <% end %>
         </div>
         <div class="form-group">
          <label class= "sr-only" for="email">email</label>
          <input type="email" name="email" id="email" placeholder= "email">
+         <% if @user.errors.full_messages_for(:email).length > 0 %>
+          <p class= "errors"><%=@user.errors.full_messages_for(:email)[0]%>
+         <% end %>
         </div>
         <div class="form-group">
          <label class= "sr-only" for="username">username</label>
          <input type="text" name="username" id="username" placeholder= " username">
+         <% if @user.errors.full_messages_for(:username).length > 0 %>
+          <p class= "errors"><%=@user.errors.full_messages_for(:username)[0]%>
+         <% end %>
         </div>
         <div class="form-group">
          <label class= "sr-only" for="password">password</label>
          <input type="password" name="password" id="password" placeholder= "password">
+         <% if @user.errors.full_messages_for(:password).length > 0 %>
+          <p class= "errors"><%=@user.errors.full_messages_for(:password)[0]%>
+         <% end %>
         </div>
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
         <button id="createUserButton" type="submit" class="btn-btn-primary">Sign Up! </button>
       </form>
-     </div>
-     <p id="loginP">or <a id="loginLink" href="/login">sign in</a></p>
    </div>
  </section>
 </div>

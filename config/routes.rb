@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'brew_log#index'
-  resources :users
-  # get '/login' => 'session#new'
+  resources :user
+  get '/login' => 'session#new'
   post '/session' => 'session#create'
   delete '/session' => 'session#destroy'
 
