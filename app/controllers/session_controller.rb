@@ -18,6 +18,6 @@ class SessionController < ApplicationController
 
   def destroy
     reset_session
-    render :new
+    render :bye
   end
 end

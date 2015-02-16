@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  root 'brew_log#index'
+  root 'user#index'
   resources :user
-  get '/login' => 'session#new'
+  get '/session' => 'session#new'
   post '/session' => 'session#create'
   delete '/session' => 'session#destroy'
-
-  get '/secret' => 'secret#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

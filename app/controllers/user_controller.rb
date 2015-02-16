@@ -1,11 +1,13 @@
 class UserController < ApplicationController
 
+  def index
+    @user = User.new
+  end
 
   def create
-    binding.pry
     @user = User.create(user_params)
     if @user.save
-      render :new
+      redirect_to session_path
     else
       render :index
     end
@@ -16,7 +18,7 @@ class UserController < ApplicationController
     if @user
       render :show
     else
-      redirect_to login_path
+      redirect_to session_path
     end
   end
 

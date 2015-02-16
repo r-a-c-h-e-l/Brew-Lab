@@ -1,1 +1,23 @@
-<h1>YOU'VE MADE IT!</h1>
+<div class = "container-fluid">
+  <section class= "row">
+    <div class= "col-md-6 clearfix" id="header">
+        <!-- make a brew logo, insert next to Brew Log -->
+        <h1 id="textLogo" class="text-left">Brew Log<img class="smLogo" src="/assets/beer_glasses.jpg"/></h1>
+    </div>
+    <div class="col-md-6 clearfix text-right" id="userNav">
+      <h3 id="welcomeUser"> Hello, <%= @user.username %> |</h3>
+      <form id="formLogout" action='/session' method='POST'>
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token()%>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input id="logoutUser" type="submit" name="name" value="Logout">
+      </form>
+    </div>
+  </section>
+  <section class="row">
+    <div class="col-md-12">
+      <h1><%= @user.username %>, YOU'VE MADE IT!</h1>
+    </div>
+  </section>
+</div>
+
+<!--  -->

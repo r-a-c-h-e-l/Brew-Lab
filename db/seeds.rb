@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Beer.create(beer_name: 'Mo Fuggles', beer_type: 'lager', user_id: 1, phaseX: 4)
+Beer.create(beer_name: 'Bitter Old Bastard', beer_type: 'bitter', user_id: 1, phaseX: 2)
+Beer.create(beer_name: 'Black Beauty', beer_type: 'stout', user_id:2, phaseX: 1 )

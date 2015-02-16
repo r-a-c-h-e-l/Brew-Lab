@@ -1,3 +1,78 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#header {
+  height: 100px;
+  background-color: black;
+}
+
+#header h1{
+  font-style: helvetica;
+  color: white;
+}
+
+#userNav {
+  height: 100px;
+  background-color: black;
+}
+
+#welcomeUser {
+  // float: right;
+  display: inline;
+  color:white;
+  font-style: helvetica;
+}
+
+#formLogout {
+  max-width: 100px;
+  display: inline;
+}
+
+#logoutUser {
+  // float: right;
+  // display: inline;
+  font-size: 1.5em;
+  // font-weight: bold;
+  font-style: helvetica;
+  color: white;
+  border:none;
+  background:none;
+  cursor:pointer;
+}
+
+
+.smLogo {
+  width: 75px;
+}
+.lgLogo {
+  padding-top: 10%;
+  width: 400px;
+}
+
+#textLogo {
+  display: inline;
+}
+
+// the signUp button that send form to server
+#createUserButton {
+
+}
+
+// A temperature monitoring assistant to your homebrewing
+#welcome {
+  padding-top: 10%;
+  max-width: 400px;
+  font-family: helvetica;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+// the lighter lettering before the login link
+#loginP {
+
+}
+
+// the link below signUP that routes to the login page
+#loginLink {
+
+}
