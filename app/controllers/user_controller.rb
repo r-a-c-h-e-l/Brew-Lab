@@ -15,6 +15,7 @@ class UserController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+    # @beer = @user.beer
     if @user
       render :show
     else
