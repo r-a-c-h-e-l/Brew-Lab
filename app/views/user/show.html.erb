@@ -7,20 +7,7 @@
 </script>
 
 <div class = "container-fluid">
-  <section class= "row">
-    <div class= "col-md-6 clearfix" id="header">
-        <!-- make a brew logo, insert next to Brew Log -->
-        <h1 id="textLogo" class="text-left">Brew Log<img class="smLogo" src="/assets/beer_glasses.jpg"/></h1>
-    </div>
-    <!-- the navbar for user -->
-    <div class="col-md-6 clearfix text-right" id="userNav">
-      <h3 id="welcomeUser"> Hello, <%= @user.username %> |</h3>
-      <form id="formLogout" action='/session' method='POST'>
-        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token()%>">
-        <input type="hidden" name="_method" value="DELETE">
-        <input id="logoutUser" type="submit" name="name" value="Logout">
-      </form>
-    </div>
+  <%= render "layouts/userHeader"%>
   </section>
   <section class="row">
     <div class="col-md-12">
@@ -30,19 +17,31 @@
   <section class="row text-center">
     <div class="col-md-4">
       <div id="cellar">
-        <h4>CELLAR</h4>
+        <a href="/user/<%=@user.id%>/beers"><h4>CELLAR</h4></a>
       </div>
     </div>
     <div class="col-md-4">
       <div id="newBrew">
-        <h4>BREW</h4>
+        <a href="/user/<%=@user.id%>/beer/new"><h4>BREW</h4></a>
       </div>
     </div>
     <div class="col-md-4">
       <% if @user.beer %>
-        <div id="progress"> </div>
+        <div id="progress">
           <%= @user.beer.beer_name %>
-        <!-- here you should render the progress bar, or call the function that does -->
+          <!-- here you should render the progress bar, or call the function that does -->
+          <div class="progress">
+            <div class="progress-bar" id="phase1Prog" style="width: 35%">
+              <span class="sr-only">35% Complete (success)</span>
+            </div>
+            <div class="progress-bar  progress-bar-striped" id="phase2Prog" style="width: 20%">
+              <span class="sr-only">20% Complete (warning)</span>
+            </div>
+            <div class="progress-bar" id="phase3Prog" style="width: 10%">
+              <span class="sr-only">10% Complete (danger)</span>
+            </div>
+          </div>
+        </div>
       <% else %>
         <div id="noAction">
             <h4>GET BREWIN!</h4>

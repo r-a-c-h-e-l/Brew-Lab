@@ -1,0 +1,11 @@
+<!--take @phase_array and each through it creating a new row w/ bootstrap that has a link to phase  -->
+<div class="container-fluid">
+  <%= render "layouts/userHeader"%>
+  <% @phase_array.each do |phase| %>
+    <section class="row">
+      <div class="col-md-12">
+        <a href="/user/<%=@user.beer_id%>/<%=phase%>"><h1><%=phase%></h1></a>
+      </div>
+    </section>
+  <% end %>
+</div>

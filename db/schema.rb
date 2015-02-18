@@ -11,15 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217000534) do
+ActiveRecord::Schema.define(version: 20150218010152) do
 
   create_table "beers", force: :cascade do |t|
-    t.text     "beer_name"
+    t.text     "beer_name",    default: "new beer"
     t.text     "beer_type"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.integer  "phaseX"
+    t.text     "phase_array"
+    t.integer  "total_phases"
+    t.text     "photo_url",    default: "/assets/beer_glasses.jpg"
+    t.integer  "bottles"
   end
 
   create_table "phase1s", force: :cascade do |t|

@@ -1,0 +1,18 @@
+  <section class= "row">
+    <div class= "col-md-6 clearfix" id="header">
+        <!-- make a brew logo, insert next to Brew Log -->
+        <h1 id="textLogo" class="text-left">Brew Degree<img class="smLogo" src="/assets/beer_glasses.jpg"/></h1>
+    </div>
+    <!-- the navbar for user -->
+    <div class="col-md-6 clearfix text-right" id="userNav">
+      <div id="navBar">
+        <a id="home" href="/user/<%=@user.id%>"><i class="fa fa-home fa-2x"></i></span></a>
+        <h3 id="welcomeUser"> Hello, <%= @user.username %> |</h3>
+        <form id="formLogout" action='/session' method='POST'>
+          <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token()%>">
+          <input type="hidden" name="_method" value="DELETE">
+          <input id="logoutUser" type="submit" name="name" value="Logout">
+        </form>
+      </div>
+    </div>
+  </section>

@@ -18,6 +18,6 @@ class SessionController < ApplicationController
 
   def destroy
     reset_session
-    render :bye
+    redirect_to root_path
   end
 end
