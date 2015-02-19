@@ -1,2 +1,0 @@
-class LagerController < ApplicationController
-end

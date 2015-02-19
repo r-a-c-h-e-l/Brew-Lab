@@ -1,0 +1,2 @@
+class ChillsController < ApplicationController
+end

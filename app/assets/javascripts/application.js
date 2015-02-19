@@ -14,10 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require index
+//= require show
+//= require websocketClient
 //= require underscore
 //= require backbone
-//= require models
-//= require collections
-//= require views
 //= require turbolinks
 //= require_tree .

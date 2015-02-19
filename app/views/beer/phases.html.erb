@@ -4,7 +4,7 @@
   <% @phase_array.each do |phase| %>
     <section class="row">
       <div class="col-md-12">
-        <a href="/user/<%=@user.beer_id%>/<%=phase%>"><h1><%=phase%></h1></a>
+        <a href="/user/<%=@user.id%>/beer/<%=@user.beer_id%>/<%=phase.downcase%>"><h1><%=phase%></h1></a>
       </div>
     </section>
   <% end %>

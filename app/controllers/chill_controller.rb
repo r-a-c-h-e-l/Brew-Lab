@@ -1,2 +1,0 @@
-class ChillController < ApplicationController
-end

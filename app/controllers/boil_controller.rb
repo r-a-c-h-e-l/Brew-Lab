@@ -1,2 +1,0 @@
-class BoilController < ApplicationController
-end

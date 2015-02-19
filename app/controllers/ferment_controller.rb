@@ -1,2 +1,0 @@
-class FermentController < ApplicationController
-end

@@ -1,0 +1,2 @@
+class BoilsController < ApplicationController
+end
