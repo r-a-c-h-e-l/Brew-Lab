@@ -15,7 +15,6 @@
 //= require bootstrap
 //= require index
 //= require show
-//= require websocketClient
 //= require underscore
 //= require backbone
 //= require turbolinks

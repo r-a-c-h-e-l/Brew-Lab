@@ -31,6 +31,7 @@ var generateProgressBar = function(phase,total) {
   }
 }
 
+
 $(document).ready(function() {
   generateProgressBar(phase,total)
 })

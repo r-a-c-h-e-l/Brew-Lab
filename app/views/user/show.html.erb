@@ -1,8 +1,10 @@
-<script charset="utf-8">
-  var phase = <%=@user.beer.phaseX%>
-  var total = <%=@user.beer.total_phases%>
-  generateProgressBar(phase,total)
-</script>
+<% if @user.beer %>
+  <script charset="utf-8">
+    var phase = <%=@user.beer.phaseX%>
+    var total = <%=@user.beer.total_phases%>
+    generateProgressBar(phase,total)
+  </script>
+<%end%>
 
 <div class = "container-fluid">
   <%= render "layouts/userHeader"%>
