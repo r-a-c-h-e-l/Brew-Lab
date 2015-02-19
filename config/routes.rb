@@ -1,18 +1,36 @@
 Rails.application.routes.draw do
   root 'user#index'
-  get 'user/:id/beers' => 'beers#index'
+  get 'user/:id/beers' => 'beer#index'
+  get 'user/:id/beer/:beer_id/phases' => 'beer#phases'
   resources :user do
-    resource :beer
+    resources :beer do
+      resource :mash, :only => :show
+      resource :sparge, :only => :show
+      resource :boil, :only => :show
+      resource :chill, :only => :show
+      resource :ferment, :only => :show
+      resource :lager, :only => :show
+    end
   end
+
+  # resources :beer do
+  #   resource :mash, :only => :show
+  #   resource :sparge, :only => :show
+  #   resource :boil, :only => :show
+  #   resource :chill, :only => :show
+  #   resource :ferment, :only => :show
+  #   resource :lager, :only => :show
+  # end
+
   get '/session' => 'session#new'
   post '/session' => 'session#create'
   delete '/session' => 'session#destroy'
-  get '/user/:beer_id/MASH' => 'phase#mash'
-  get '/user/:beer_id/SPARGE' => 'phase#sparge'
-  get '/user/:beer_id/BOIL' => 'phase#boil'
-  get '/user/:beer_id/CHILL' => 'phase#chill'
-  get '/user/:beer_id/FERMENT' => 'phase#ferment'
-  get '/user/:beer_id/LAGER' => 'phase#lager'
+  # get '/user/:beer_id/MASH' => 'phase#mash'
+  # get '/user/:beer_id/SPARGE' => 'phase#sparge'
+  # get '/user/:beer_id/BOIL' => 'phase#boil'
+  # get '/user/:beer_id/CHILL' => 'phase#chill'
+  # get '/user/:beer_id/FERMENT' => 'phase#ferment'
+  # get '/user/:beer_id/LAGER' => 'phase#lager'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

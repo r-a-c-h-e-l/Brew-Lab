@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218010152) do
+ActiveRecord::Schema.define(version: 20150218193940) do
 
   create_table "beers", force: :cascade do |t|
     t.text     "beer_name",    default: "new beer"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150218010152) do
     t.integer  "bottles"
   end
 
-  create_table "phase1s", force: :cascade do |t|
+  create_table "boils", force: :cascade do |t|
     t.text     "temps"
     t.integer  "user_id"
     t.integer  "beer_id"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150218010152) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "phase2s", force: :cascade do |t|
+  create_table "chills", force: :cascade do |t|
     t.text     "temps"
     t.integer  "user_id"
     t.integer  "beer_id"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150218010152) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "phase3s", force: :cascade do |t|
+  create_table "ferments", force: :cascade do |t|
     t.text     "temps"
     t.integer  "user_id"
     t.integer  "beer_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150218010152) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "phase4s", force: :cascade do |t|
+  create_table "lagers", force: :cascade do |t|
     t.text     "temps"
     t.integer  "user_id"
     t.integer  "beer_id"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150218010152) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "phase5s", force: :cascade do |t|
+  create_table "mashes", force: :cascade do |t|
     t.text     "temps"
     t.integer  "user_id"
     t.integer  "beer_id"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20150218010152) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "phase6s", force: :cascade do |t|
+  create_table "sparges", force: :cascade do |t|
     t.text     "temps"
     t.integer  "user_id"
     t.integer  "beer_id"

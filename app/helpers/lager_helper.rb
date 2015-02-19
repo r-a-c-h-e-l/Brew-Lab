@@ -1,0 +1,2 @@
+module LagerHelper
+end

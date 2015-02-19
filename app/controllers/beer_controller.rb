@@ -1,4 +1,4 @@
-class BeersController < ApplicationController
+class BeerController < ApplicationController
   def index
     @user = User.find(params[:id])
     render :index
@@ -11,8 +11,8 @@ class BeersController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-
     @phase_array = []
+    # grab users selected phases
     params.each do |key,value|
       if value == "true"
         @phase_array << key
@@ -23,13 +23,26 @@ class BeersController < ApplicationController
     beer_params = {
       user_id: @user.id,
       phase_array: @strArray,
-      total_phases: @length
+      total_phases: @length,
+      phaseX: 1
     }
     @beer = Beer.create(beer_params)
     current_beer = {
       beer_id: @beer.id
     }
     @user.update(current_beer)
+    render :phases
+  end
+
+  def phases
+    @user = User.find(params[:id])
+    @phase_array = JSON.parse(@user.beer.phase_array)
+    render :phases
+  end
+
+  def show
+    # need to make show template that diplays the indv beer all fancy!
+    @beer = Beer.find()
     render :show
   end
 end

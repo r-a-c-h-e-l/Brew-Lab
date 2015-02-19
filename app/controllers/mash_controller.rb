@@ -1,0 +1,2 @@
+class MashController < ApplicationController
+end
