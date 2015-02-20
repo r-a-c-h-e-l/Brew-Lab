@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   get 'user/:id/beer/:beer_id/phases' => 'beer#phases'
   resources :user do
     resources :beer do
-      resource :mash, :only => :show
-      resource :sparge, :only => :show
-      resource :boil, :only => :show
-      resource :chill, :only => :show
-      resource :ferment, :only => :show
-      resource :lager, :only => :show
+      resource :mash, :only => [:show, :create]
+      resource :sparge, :only => [:show, :create]
+      resource :boil, :only => [:show, :create]
+      resource :chill, :only => [:show, :create]
+      resource :ferment, :only => [:show, :create]
+      resource :lager, :only => [:show, :create]
     end
   end
 

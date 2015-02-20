@@ -1,3 +1,82 @@
 // Place all the styles related to the mash controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.phaseGraph {
+  display: inline-block;
+  margin-top: 6%;
+  // margin-right: auto;
+  // margin-left: auto;
+  // margin-top: 20%;
+  // margin-left: 20%;
+  width: 800px;
+  height: 200px;
+  border: 2px black solid;
+}
+
+.phaseHead {
+  margin-top: 3%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+.phaseHeaders {
+  font-style: helvetica;
+  font-size: 5em;
+  height: 200px;
+}
+
+.temps {
+  margin-top: 3%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: lightgreen;
+  height: 700px;
+  width: 80%;
+  border-radius: 10%;
+}
+
+#tempNumber {
+  display: inline-block;
+  color: white;
+  font-size:32em;
+  font-style: helvetica;
+  font-weight: bold;
+}
+
+#degree {
+  color: white;
+  height: 50px;
+}
+
+#f {
+  color: white;
+  font-size: 3em;
+  font-family: helvetica;
+}
+
+.buttonHolder {
+  display: inline;
+  color: white;
+  font-size: 2em;
+  font-style: helvetica;
+}
+
+#startMonitor {
+  margin-top: 10%;
+  background-color: lightgreen;
+  padding: 1%;
+  border: none;
+  font-weight: bold;
+}
+
+#stopMonitor {
+  background-color: red;
+  padding: 1%;
+  border: none;
+  font-weight: bold;
+}

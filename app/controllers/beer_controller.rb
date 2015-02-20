@@ -37,6 +37,7 @@ class BeerController < ApplicationController
   def phases
     @user = User.find(params[:id])
     @phase_array = JSON.parse(@user.beer.phase_array)
+    # binding.pry
     render :phases
   end
 

@@ -1,6 +1,6 @@
-var sensorMonitor = function() {
+var sensorMonitorMash = function() {
   var startButton = document.getElementById('startMonitor');
-
+  var stopButton = document.getElementById('stopMonitor')
   startButton.addEventListener('click', function() {
     var client = new WebSocket("ws://localhost:2000");
 
@@ -10,9 +10,32 @@ var sensorMonitor = function() {
     });
 
     client.addEventListener("message", function(evt) {
-      console.log(evt.data);
+      // console.log(evt.data);
       var processedMessage = JSON.parse(evt.data);
-      console.log(processedMessage);
+      if (processedMessage.temps) {
+        var tempsArray = processedMessage.temps
+        var xhr = new XMLHttpRequest();
+        // /user/:user_id/beer/:beer_id/mash
+        xhr.open('POST', 'http://localhost:3000/user/'+user_id+'/beer/'+beer_id+'/mash');
+        xhr.setRequestHeader('Content-Type', "application/json;charset=UTF-8")
+        xhr.addEventListener('load', function() {});
+        var newMashPhase = {temps: tempsArray, user_id: user_id, beer_id: beer_id};
+        xhr.send(JSON.stringify(newMashPhase));
+      }else {
+        console.log(processedMessage);
+      }
+
+    });
+    stopButton.addEventListener('click', function() {
+      // var obj = {
+      //   phase: "mash",
+      //   user_id: user_id,
+      //   beer_id: beer_id
+      // }
+      var obj = {
+        msg: "stop",
+      }
+      client.send(JSON.stringify(obj));
     });
   });
 }
