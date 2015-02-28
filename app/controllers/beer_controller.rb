@@ -7,6 +7,7 @@ class BeerController < ApplicationController
   def new
     @beer = Beer.new
     @user = User.find(params[:user_id])
+    render :new
   end
 
   def create

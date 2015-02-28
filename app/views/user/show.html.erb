@@ -2,18 +2,14 @@
   <script charset="utf-8">
     var phase = <%=@user.beer.phaseX%>
     var total = <%=@user.beer.total_phases%>
-    generateProgressBar(phase,total)
+    $(document).ready(function() {
+      generateProgressBar(phase,total)
+    })
   </script>
 <%end%>
 
 <div class = "container-fluid">
   <%= render "layouts/userHeader"%>
-  </section>
-  <section class="row">
-    <div class="col-md-12">
-      <!-- <h1><%= @user.username %>, YOU'VE MADE IT!</h1> -->
-    </div>
-  </section>
   <section class="row text-center">
     <div class="col-md-4">
       <div id="cellar">

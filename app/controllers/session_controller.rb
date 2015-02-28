@@ -8,6 +8,7 @@ class SessionController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      session[:token] = params[:authenticity_token]
       # redirect to user GET /users
       redirect_to user_path(@user)
     else

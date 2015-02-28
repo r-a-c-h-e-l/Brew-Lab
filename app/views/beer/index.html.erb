@@ -1,6 +1,19 @@
 <div class="container-fluid">
   <%= render "layouts/userHeader"%>
-  <% @user.beers.each do |beer| %>
-    <li><%=beer.beer_name%></li>
-  <%end%>
+    <section class = "row">
+      <div class = 'text-center'>
+        <% @user.beers.each do |beer| %>
+        <div class = "col-md-4 col-sm-6 img_card">
+          <a href="/user/<%=@user.id%>/beer/<%=beer.id%>">
+            <img id= "beer_img" class="img-responsive, beer_image" src=<%=beer.photo_url%>>
+          </a>
+          <h4><span class= "label">Name:</span> <%=beer.beer_name%></h4>
+          <h4><span class= "label">Type:</span> <%=beer.beer_type%></h4>
+          <h4><span class= "label">Phases:</span> <%=JSON.parse(beer.phase_array).join(", ").downcase%></h4>
+          <h4><span class= "label">Number of Bottles:</span><%=beer.bottles%></h4>
+          <h4><span class= "label">Start Date:</span><%=beer.created_at.localtime.strftime("%b %d, %Y")%></h4>
+        </div>
+        <% end %>
+      </div>
+    </section>
 </div>

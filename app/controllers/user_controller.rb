@@ -15,9 +15,12 @@ class UserController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    # @beer = @user.beer
+    session_token = session[:token]
     if @user
-      render :show
+      respond_to do |format|
+        format.html { render :show }
+        format.json { render json: session_token}
+      end
     else
       redirect_to session_path
     end

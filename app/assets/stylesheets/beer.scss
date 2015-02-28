@@ -1,0 +1,27 @@
+// Place all the styles related to the beers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.img_card{
+  margin: 25px 0 25px 0;
+}
+
+.img_card h4{
+  font-family: helvetica;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-left: 20%;
+  text-align: left;
+  color: black;
+}
+
+.label{
+  font-family: helvetica;
+  font-size: .8em;
+  color: grey;
+}
+
+#beer_img{
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+}

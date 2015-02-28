@@ -50,7 +50,7 @@
           </label>
         </div>
       </div>
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>">
+      <input type="hidden" name="authenticity_token" value="<%=session[:token]%>">
       <div class="col-md-2 .col-md-offset-5">
         <button type="submit"> Start Brewin!</button>
       </div>

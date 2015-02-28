@@ -30,8 +30,3 @@ var generateProgressBar = function(phase,total) {
     parent.appendChild(div);
   }
 }
-
-
-$(document).ready(function() {
-  generateProgressBar(phase,total)
-})
