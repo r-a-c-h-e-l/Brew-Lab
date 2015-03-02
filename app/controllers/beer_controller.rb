@@ -43,8 +43,40 @@ class BeerController < ApplicationController
   end
 
   def show
-    # need to make show template that diplays the indv beer all fancy!
-    @beer = Beer.find()
+    # need to make show template that diplays the indv beer all fancy
+    @beer = Beer.find(params[:id])
+    @user = @beer.user
     render :show
   end
+
+  def update
+    binding.pry
+    @beer = Beer.find(params[:id])
+    @beer.update(filter_params)
+    path_params = {
+      user_id: @beer.user.id,
+      id: @beer.id
+    }
+    redirect_to user_beer_path(path_params)
+  end
+
+  def destroy
+    @beer = Beer.find(params[:id])
+    @beer.destroy
+    #/user/:id/beers(.:format)                      beer#index
+    redirect_to "/user/#{params[:user_id]}/beers"
+  end
+
+  private
+    def filter_params
+      hash = {}
+      params.each do |key, value|
+        if key ==="beer_name" || key ==="beer_type" || key ==="bottles" || key ==="beer_notes"
+          if value != ""
+            hash[key] = value
+          end
+        end
+      end
+      params.permit(hash.keys)
+    end
 end

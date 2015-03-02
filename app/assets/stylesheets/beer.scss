@@ -25,3 +25,28 @@
   text-align: center;
   margin: 0 auto;
 }
+
+#beer_image{
+  display: block;
+  margin-top: 10%;
+  width: 300px;
+}
+
+#beer_info {
+  height: 400px;
+}
+
+#beer_info h3{
+  font-family: helvetica;
+  font-size: 1.5em;
+}
+
+#beer_info p{
+  margin-left: 2%;
+  font-family: helvetica;
+  font-size: 1.3em;
+}
+
+.modal-body {
+  padding: 8%;
+}

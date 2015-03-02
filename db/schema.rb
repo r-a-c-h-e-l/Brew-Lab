@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150218193940) do
+ActiveRecord::Schema.define(version: 20150301201252) do
 
   create_table "beers", force: :cascade do |t|
     t.text     "beer_name",    default: "new beer"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20150218193940) do
     t.integer  "total_phases"
     t.text     "photo_url",    default: "/assets/beer_glasses.jpg"
     t.integer  "bottles"
+    t.text     "beer_notes",   default: "add brew details here."
   end
 
   create_table "boils", force: :cascade do |t|
