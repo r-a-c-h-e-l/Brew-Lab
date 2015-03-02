@@ -36,8 +36,9 @@ class BeerController < ApplicationController
   end
 
   def phases
+    @beer = Beer.find(params[:beer_id])
     @user = User.find(params[:id])
-    @phase_array = JSON.parse(@user.beer.phase_array)
+    @phase_array = JSON.parse(@beer.phase_array)
     # binding.pry
     render :phases
   end
@@ -50,7 +51,6 @@ class BeerController < ApplicationController
   end
 
   def update
-    binding.pry
     @beer = Beer.find(params[:id])
     @beer.update(filter_params)
     path_params = {

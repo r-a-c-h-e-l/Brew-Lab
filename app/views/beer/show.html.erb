@@ -17,7 +17,7 @@
     <div id="beer_info" class = "col-md-4">
       <h3><span class= "label">Name:</span> <%=@beer.beer_name%></h3>
       <h3><span class= "label">Type:</span> <%=@beer.beer_type%></h3>
-      <h3><span class= "label">Phases:</span> <%=JSON.parse(@beer.phase_array).join(", ").downcase%></h3>
+      <h3><a href="/user/<%=@user.id%>/beer/<%=@beer.id%>/phases"><span class= "label">Phases:</span></a> <%=JSON.parse(@beer.phase_array).join(", ").downcase%></h3>
       <h3><span class= "label">Current Phase:</span> <%=@beer.phaseX%></h3>
       <h3><span class= "label">Number of Bottles:</span><%=@beer.bottles%></h3>
       <h3><span class= "label">Start Date:</span><%=@beer.created_at.localtime.strftime("%b %d, %Y")%></h3>
