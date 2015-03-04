@@ -2,22 +2,36 @@
 <div class="container-fluid">
   <%= render "layouts/userHeader"%>
   <% current_phase = @beer.phaseX %>
+  <% total_phases = @beer.total_phases %>
   <% phase_array = @phase_array.map {|phase| phase.downcase}%>
-  <% for i in (0...current_phase-1) %>
-    <section class="row">
-      <div class="col-md-9">
-        <a href="/user/<%=@user.id%>/beer/<%=@user.beer_id%>/<%=phase_array[i]%>"><h1><%=phase_array[i]%></h1></a>
-      </div>
-      <div class="col-md-3">
-        <i class="fa fa-check fa-5x"></i>
-      </div>
-    </section>
-  <% end %>
-  <% for i in (current_phase-1..phase_array.length) %>
-    <section class="row">
-      <div class="col-md-12">
-        <a href="/user/<%=@user.id%>/beer/<%=@user.beer_id%>/<%=phase_array[i]%>"><h1><%=phase_array[i]%></h1></a>
-      </div>
-    </section>
+  <% if current_phase != total_phases %>
+    <% for i in (0...current_phase) %>
+      <section class="row">
+        <div class="col-md-9">
+          <a href="/user/<%=@user.id%>/beer/<%=@user.beer_id%>/<%=phase_array[i]%>"><h1><%=phase_array[i]%></h1></a>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-check fa-5x"></i>
+        </div>
+      </section>
+    <% end %>
+    <% for i in (current_phase...phase_array.length) %>
+      <section class="row">
+        <div class="col-md-12">
+          <a href="/user/<%=@user.id%>/beer/<%=@user.beer_id%>/<%=phase_array[i]%>"><h1><%=phase_array[i]%></h1></a>
+        </div>
+      </section>
+    <% end %>
+  <% else %>
+    <% for i in (0...current_phase) %>
+      <section class="row">
+        <div class="col-md-9">
+          <a href="/user/<%=@user.id%>/beer/<%=@user.beer_id%>/<%=phase_array[i]%>"><h1><%=phase_array[i]%></h1></a>
+        </div>
+        <div class="col-md-3">
+          <i class="fa fa-check fa-5x"></i>
+        </div>
+      </section>
+    <% end %>
   <% end %>
 </div>

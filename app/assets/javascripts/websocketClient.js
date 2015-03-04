@@ -10,7 +10,8 @@ var changeTemp = function(temp) {
   }
 }
 
-var sensorMonitorMash = function(user_id, beer_id) {
+var sensorMonitor = function(user_id, beer_id, phase) {
+  var phase = phase
   var user_id = user_id
   var beer_id = beer_id
   var startButton = document.getElementById('startMonitor');
@@ -40,7 +41,7 @@ var sensorMonitorMash = function(user_id, beer_id) {
           //send post with token
           var xhr2 = new XMLHttpRequest();
           // /user/:user_id/beer/:beer_id/mash mashes#show
-          xhr2.open('POST', 'http://localhost:3000/user/'+user_id+'/beer/'+beer_id+'/mash');
+          xhr2.open('POST', 'http://localhost:3000/user/'+user_id+'/beer/'+beer_id+'/'+phase);
           xhr2.setRequestHeader('Content-Type', "application/json;charset=UTF-8")
           xhr2.addEventListener('load', function() {
             var statusResponse = JSON.parse(xhr2.responseText);

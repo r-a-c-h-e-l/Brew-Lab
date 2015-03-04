@@ -1,6 +1,7 @@
 class MashesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
+    @phase = "mash"
     render :show
   end
 
@@ -19,7 +20,7 @@ class MashesController < ApplicationController
 
   private
     def phase_update
-      {phaseX: 2}
+      {phaseX: @beer.phaseX + 1}
     end
     def phase_params
       params.require(:mash).permit(:temps, :user_id, :beer_id)

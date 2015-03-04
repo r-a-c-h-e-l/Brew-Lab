@@ -25,7 +25,7 @@ class BeerController < ApplicationController
       user_id: @user.id,
       phase_array: @strArray,
       total_phases: @length,
-      phaseX: 1
+      phaseX: 0
     }
     @beer = Beer.create(beer_params)
     current_beer = {
